@@ -1,0 +1,71 @@
+{% extends "tienda/base.html" %}
+
+{% block title %}Editar Mi Perfil{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h2 class="text-center mb-4">Editar Mi Perfil</h2>
+
+            <div class="card shadow">
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <h4 class="mb-3">Datos Personales</h4>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Nombre</label>
+                                {{ user_form.first_name }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Apellido</label>
+                                {{ user_form.last_name }}
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            {{ user_form.email }}
+                        </div>
+
+                        <hr class="my-4">
+
+                        <h4 class="mb-3">Datos de Envío</h4>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">DNI</label>
+                                {{ profile_form.dni }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Teléfono</label>
+                                {{ profile_form.telefono }}
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Dirección</label>
+                            {{ profile_form.direccion }}
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Barrio</label>
+                                {{ profile_form.barrio }}
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Código Postal</label>
+                                {{ profile_form.codigo_postal }}
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Provincia</label>
+                                {{ profile_form.provincia }}
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 btn-lg mt-3">Guardar Cambios</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

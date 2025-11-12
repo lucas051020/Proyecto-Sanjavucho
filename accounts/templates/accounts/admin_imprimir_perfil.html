@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Imprimir Perfil de {{ usuario.username }}</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.5; }
+        .container { width: 90%; margin: 0 auto; }
+        .info-cliente { border: 1px solid #000; padding: 15px; }
+        .info-cliente h2 { margin-top: 0; }
+        @media print { .no-print { display: none; } }
+    </style>
+</head>
+<body onload="window.print();">
+<div class="container">
+    <div class="info-cliente">
+        <h2>Datos del Cliente</h2>
+        <p>
+            <strong>Usuario:</strong> {{ usuario.username }} <br>
+            <strong>Nombre:</strong> {{ usuario.first_name }} {{ usuario.last_name }} <br>
+            <strong>Email:</strong> {{ usuario.email }} <br>
+            <strong>Fecha de Registro:</strong> {{ usuario.date_joined }} <br>
+            <hr>
+            <strong>DNI:</strong> {{ usuario.profile.dni|default:"-" }} <br>
+            <strong>Teléfono:</strong> {{ usuario.profile.telefono|default:"-" }} <br>
+            <strong>Dirección:</strong> {{ usuario.profile.direccion|default:"-" }} <br>
+            <strong>Barrio:</strong> {{ usuario.profile.barrio|default:"-" }} <br>
+            <strong>Código Postal:</strong> {{ usuario.profile.codigo_postal|default:"-" }} <br>
+            <strong>Provincia:</strong> {{ usuario.profile.provincia|default:"-" }}
+        </p>
+    </div>
+    <button class="no-print" onclick="window.print();" style="margin-top: 20px;">
+        Volver a Imprimir
+    </button>
+</div>
+</body>
+</html>
