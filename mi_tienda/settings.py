@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -98,3 +99,9 @@ LOGIN_REDIRECT_URL = 'tienda_app:lista_productos'
 LOGOUT_REDIRECT_URL = 'tienda_app:lista_productos'
 
 LOGIN_URL = 'accounts:login'
+
+STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
