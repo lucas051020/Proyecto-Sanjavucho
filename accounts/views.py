@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from .forms import CustomUserCreationForm, UserEditForm, ProfileEditForm
-from .models import Profile  # <-- 1. ¡IMPORTA EL MODELO PROFILE!
+from .models import Profile
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404

@@ -6,8 +6,8 @@ from django.db.models import Q
 def lista_productos(request, categoria_slug=None):
     categoria = None
     categorias = Categoria.objects.filter(parent=None)
-    productos = Producto.objects.filter(disponible=True) 
-    
+    productos = Producto.objects.filter(disponible=True)
+    preguntas = PreguntaFrecuente.objects.all() 
     categoria_activa_slug = None
     categoria_padre_slug = None
     
@@ -45,6 +45,7 @@ def lista_productos(request, categoria_slug=None):
         'query': query,
         'categoria_activa_slug': categoria_activa_slug,
         'categoria_padre_slug': categoria_padre_slug,
+        'preguntas_frecuentes': preguntas,
     })
 
 
@@ -66,8 +67,5 @@ def detalle_producto(request, id, slug):
 
 
 def pagina_faq(request):
-    """
-    Muestra la página de Preguntas Frecuentes desde la base de datos.
-    """
-    preguntas = PreguntaFrecuente.objects.all()
+    preguntas = PreguntaFrecuente.objects.all().order_by('orden')
     return render(request, 'tienda/faq.html', {'preguntas': preguntas})

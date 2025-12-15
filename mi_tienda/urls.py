@@ -8,7 +8,7 @@ urlpatterns = [
     path('cart/', include('cart.urls', namespace='cart')),
     path('pedidos/', include('pedidos.urls', namespace='pedidos')),
     path('accounts/', include('accounts.urls', namespace='accounts')),
-    path('', include('tienda_app.urls')), # Incluir las URLs de la app
+    path('', include('tienda_app.urls')),
 ]
 
 if settings.DEBUG:

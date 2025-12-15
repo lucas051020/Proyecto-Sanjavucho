@@ -1,17 +1,18 @@
 :root {
-    --primary-color: #0d6efd; /* Azul Bootstrap (puedes cambiarlo) */
+    --primary-color: #0d6efd;
     --secondary-color: #6c757d;
 }
 
 body {
-    background-color: #f8f9fa; /* Fondo gris muy suave */
+    background-color: #f8f9fa;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* --- NAVBAR --- */
 .navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
 }
+
 .navbar-brand {
     font-weight: bold;
     letter-spacing: 1px;
@@ -26,8 +27,8 @@ body {
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Se levanta al pasar el mouse */
-    box-shadow: 0 10px 20px rgba(0,0,0,.12);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12);
 }
 
 .card-img-top {
@@ -36,12 +37,12 @@ body {
 }
 
 .card:hover .card-img-top {
-    transform: scale(1.05); /* La imagen hace un pequeño zoom */
+    transform: scale(1.05);
 }
 
 /* --- BOTONES --- */
 .btn-primary {
-    border-radius: 50px; /* Botones redondos */
+    border-radius: 50px;
     padding-left: 25px;
     padding-right: 25px;
     font-weight: 600;

@@ -5,25 +5,14 @@
 {% block content %}
 <div class="container text-center">
     <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-            <h1 class="display-4 text-success">¡Pedido Confirmado!</h1>
-            <p class="lead">
-                Muchas gracias por tu compra. Tu pedido ha sido generado exitosamente.
+        <div class="alert alert-success mt-4">
+            <h4>¡Gracias por tu compra!</h4>
+            <p>Te hemos enviado los detalles a tu correo.</p>
+            <hr>
+            <p class="mb-0">
+                ¿Tienes dudas sobre el envío o la garantía? <br>
+                Consulta nuestras <a href="{% url 'tienda_app:faq' %}" class="alert-link">Preguntas Frecuentes</a>
             </p>
-            <div class="alert alert-info mt-4">
-                Tu número de pedido es: <strong>#{{ pedido.id }}</strong>
-            </div>
-            <p>
-                Por favor, contáctanos por WhatsApp para coordinar el pago y la entrega.
-            </p>
-            <a href="https://wa.me/5491112345678?text=Hola,%20acabo%20de%20realizar%20el%20pedido%20%23{{ pedido.id }}" 
-               target="_blank" 
-               class="btn btn-success btn-lg mt-3">
-                <i class="bi bi-whatsapp"></i> Contactar por WhatsApp
-            </a>
-            <a href="{% url 'tienda_app:lista_productos' %}" class="btn btn-primary btn-lg mt-3">
-                Seguir comprando
-            </a>
         </div>
     </div>
 </div>
